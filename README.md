@@ -31,7 +31,7 @@ The aim of this project is to show how the lyrics are related different features
 
 ### Exploratory Data Analysis
 
-The EDA notebook for the lyrics can be found [at the following address](blob/master/eda/EDA.ipynb).
+The EDA notebook for the lyrics can be found [at the following address](./eda/EDA.ipynb).
 
 ### Related work
 

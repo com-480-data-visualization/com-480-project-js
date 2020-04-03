@@ -1,9 +1,8 @@
-# Music visualized
-
+# 🔮Lyrics visualized
 
 ## Milestone 1
 
-### THE DATASET
+### Dataset
 
 The dataset is composed of around 300 music of **Michael Jackson** and features for each of them :
 
@@ -22,7 +21,7 @@ The data-set is relatively clean but needs preprocessing as :
 
 After preprocessing, the dataset is clean and can be extended easily to other artists if needed.
 
-### PROBLEMATIC
+### Problematic
 
 How Michael Jackson's songs **evolved** through time, by studying the **musical features** and the lyrics of his songs?
 What are the **main topics** ? How large is Michael Jackson **vocabulary**? What are the most used words in his songs?

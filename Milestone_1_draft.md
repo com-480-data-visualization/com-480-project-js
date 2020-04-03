@@ -3,10 +3,8 @@
 The dataset is composed of around 300 music of **Michael Jackson** and features for each of them :
 
 - Title, Album title, Year of release, Music Type…
-
 - Audio features : danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo and time_signature.
-
-- The **lyrics**
+- **The lyrics**
 
 The data have been obtained using the API of **Spotify** and **[Genius.com](http://Genius.com)**.
 

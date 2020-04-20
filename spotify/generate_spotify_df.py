@@ -116,9 +116,9 @@ albums_df['artists_track'] = albums_df.artists_track.map(lambda artist_list: [ar
 
 albums_df = albums_df[['name_track', 'duration_ms', 'explicit', 'artists_track', 'artists_track_uri', 'featuring', 'track_number', 'disc_number', 'name_album', 'artists_album', 'total_tracks', 'uri_track', 'uri_album', 'danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'time_signature']]
 
-albums_df.to_pickle('../data/{0}_tracks.pickle'.format(ARTIST_NAME.lower().replace(" ", "_")))
+albums_df.to_pickle('data/{0}_tracks.pickle'.format(ARTIST_NAME.lower().replace(" ", "_")))
 
 analysis_df = pd.DataFrame(get_audio_analysis(track_uris))
 analysis_df.head()
 
-analysis_df.to_pickle('../data/{0}_tracks_analysis.pickle'.format(ARTIST_NAME.lower().replace(" ", "_")))
+analysis_df.to_pickle('data/{0}_tracks_analysis.pickle'.format(ARTIST_NAME.lower().replace(" ", "_")))

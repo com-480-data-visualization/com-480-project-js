@@ -75,4 +75,4 @@ for num_song in range(len(data["songs"])):
 
 
 lyrics_df = pd.DataFrame.from_dict(all_lyrics)
-lyrics_df.to_csv(FILENAME_LYRICS + "_clean.csv", index=False)
+lyrics_df.to_csv("data/" + FILENAME_LYRICS + "_clean.csv", index=False)

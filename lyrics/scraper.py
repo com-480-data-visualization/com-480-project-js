@@ -13,8 +13,11 @@ SETTINGS
 """
 MAX_SONGS = None
 
-ARTIST_ID = "Michael-jackson"
-ARTIST_NAME = "Michael Jackson"
+#ARTIST_ID = "Michael-jackson"
+#ARTIST_NAME = "Michael Jackson"
+
+ARTIST_ID = "Eminem"
+ARTIST_NAME = "Eminem"
 
 """
 HELPER
@@ -31,7 +34,7 @@ genius = lyricsgenius.Genius(
 )
 genius.remove_section_headers = True
 
-# save_lyrics(ARTIST_ID)
+save_lyrics(ARTIST_ID)
 
 """
 MAIN

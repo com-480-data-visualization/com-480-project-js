@@ -7,7 +7,7 @@ SETTINGS
 """
 DEBUG_PROMPT = False
 
-ARTIST_NAME = "Michael Jackson"
+ARTISTS = ["Frank Sinatra", "The Beatles", "Michael Jackson", "Eminem", "Rihanna"]
 
 token = spotipy.util.prompt_for_user_token('Julien Salomon',client_id='3f0268c00c604e70aace4982367723c7',client_secret='c9a4a4f2699642c795cb82595c2c8035',redirect_uri='http://localhost:8888')
 
@@ -31,7 +31,7 @@ def print_list(lis, tab=0):
                 print_list(val, tab=tab + 1)
         else:
             print(tabs + val)
-            
+
 def print_dict(dico, tab=0):
     tabs = ''
     for i in range(tab):
@@ -45,7 +45,7 @@ def print_dict(dico, tab=0):
             print_list(value, tab=tab + 1)
         else:
             print(tabs + item + ' : ' + str(value))
-            
+
 def print_result(res, info=None):
     if info:
         print(info)
@@ -55,7 +55,7 @@ def print_result(res, info=None):
         print_list(res)
     else:
         print(res)
-        
+
 def get_artist(artist_name):
     results = spotify.search(artist_name, type='artist')['artists']['items']
     results.sort(key=lambda artist: artist['popularity'], reverse=True)
@@ -71,7 +71,7 @@ def get_albums_tracks(albums):
         for track in tracks:
             track['album_uri'] = uri
         all_tracks += tracks
-    
+
     return pd.DataFrame(all_tracks)
 
 def get_audio_features(tracks):
@@ -91,34 +91,31 @@ def get_audio_analysis(tracks):
         print(analysis.head())
     return analysis
 
+def artist_spotify_df(artist):
+    albums = spotify.artist_albums(get_artist(artist)['uri'])['items']
+    albums_df = pd.DataFrame.from_dict(albums)
+
+    tracks_df = get_albums_tracks(albums_df.uri.unique())
+
+    albums_df['album_uri'] = albums_df.uri
+    albums_df = tracks_df.join(albums_df.set_index('album_uri'), lsuffix='_track', rsuffix='_album', on='album_uri')
+    if DEBUG_PROMPT:
+        print(albums_df.columns)
+
+    track_uris = albums_df.uri_track.unique()
+
+    features = get_audio_features(track_uris)
+    albums_df = albums_df.join(features.set_index('uri_track'), on='uri_track')
+
+    albums_df['featuring'] = albums_df.artists_track.map(lambda l: len(l) > 1)
+    albums_df['artists_track_uri'] = albums_df.artists_track.map(lambda artist_list: [artist['uri'] for artist in artist_list])
+    albums_df['artists_track'] = albums_df.artists_track.map(lambda artist_list: [artist['name'] for artist in artist_list])
+
+    albums_df = albums_df[['name_track', 'duration_ms', 'explicit', 'artists_track', 'artists_track_uri', 'featuring', 'track_number', 'disc_number', 'name_album', 'artists_album', 'total_tracks', 'uri_track', 'uri_album', 'danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'time_signature']]
+
+    albums_df.to_csv('data/spotify/{0}_tracks.csv'.format(artist.lower().replace(" ", "_")))
 """
 MAIN
 """
-
-albums = spotify.artist_albums(get_artist(ARTIST_NAME)['uri'])['items']
-albums_df = pd.DataFrame.from_dict(albums)
-
-tracks_df = get_albums_tracks(albums_df.uri.unique())
-
-albums_df['album_uri'] = albums_df.uri
-albums_df = tracks_df.join(albums_df.set_index('album_uri'), lsuffix='_track', rsuffix='_album', on='album_uri')
-if DEBUG_PROMPT:
-    print(albums_df.columns)
-    
-track_uris = albums_df.uri_track.unique()
-
-features = get_audio_features(track_uris)
-albums_df = albums_df.join(features.set_index('uri_track'), on='uri_track')
-
-albums_df['featuring'] = albums_df.artists_track.map(lambda l: len(l) > 1)
-albums_df['artists_track_uri'] = albums_df.artists_track.map(lambda artist_list: [artist['uri'] for artist in artist_list])
-albums_df['artists_track'] = albums_df.artists_track.map(lambda artist_list: [artist['name'] for artist in artist_list])
-
-albums_df = albums_df[['name_track', 'duration_ms', 'explicit', 'artists_track', 'artists_track_uri', 'featuring', 'track_number', 'disc_number', 'name_album', 'artists_album', 'total_tracks', 'uri_track', 'uri_album', 'danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'time_signature']]
-
-albums_df.to_pickle('data/{0}_tracks.pickle'.format(ARTIST_NAME.lower().replace(" ", "_")))
-
-analysis_df = pd.DataFrame(get_audio_analysis(track_uris))
-analysis_df.head()
-
-analysis_df.to_pickle('data/{0}_tracks_analysis.pickle'.format(ARTIST_NAME.lower().replace(" ", "_")))
+for artist in ARTISTS:
+    artist_spotify_df(artist)

@@ -7,7 +7,7 @@ SETTINGS
 """
 DEBUG_PROMPT = False
 
-ARTISTS = ["Frank Sinatra", "The Beatles", "Michael Jackson", "Eminem", "Rihanna"]
+ARTISTS = ['Eminem']#["Frank Sinatra", "The Beatles", "Michael Jackson", "Eminem", "Rihanna"]
 
 token = spotipy.util.prompt_for_user_token('Julien Salomon',client_id='3f0268c00c604e70aace4982367723c7',client_secret='c9a4a4f2699642c795cb82595c2c8035',redirect_uri='http://localhost:8888')
 

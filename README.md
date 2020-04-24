@@ -1,5 +1,7 @@
 # 🔮Lyrics visualized
 
+https://com-480-data-visualization.github.io/2020-project-guidelines/
+
 # Repository structure
 
 ## Data

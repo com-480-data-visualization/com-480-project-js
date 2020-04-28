@@ -59,6 +59,11 @@ _one-line introduction_ => merge lyrics and spotify
 - Special songs we need to care of ::
    - Something and Yesterday by the Beatles
    - Eminem ft Rihanna song
+   
+# Interesting basecode
+
+- https://towardsdatascience.com/animated-storytelling-using-the-javascript-d3-library-a1c2264142ad
+- https://github.com/leoniesmits/trump-lyrics
 
 # Team members
 

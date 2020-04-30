@@ -1,7 +1,5 @@
 # 🔮Lyrics visualized
 
-https://com-480-data-visualization.github.io/2020-project-guidelines/
-
 # Repository structure
 
 ## Data
@@ -19,8 +17,8 @@ https://com-480-data-visualization.github.io/2020-project-guidelines/
 
 ## Milestones
 
-- Milestone 1 link: [milestone_1](/milestones/milestone_1.md)
-- Milestone 2 link: [milestone_2](/milestones/milestone_2.md)
+- [Milestone 1](/milestones/milestone_1.md)
+- [Milestone 2](/milestones/milestone_2.md)
    - 2 pages PDF report: [milestone_2.pdf](/milestones/milestone_2.pdf)
 
 
@@ -37,12 +35,10 @@ https://com-480-data-visualization.github.io/2020-project-guidelines/
 
 `spotify_lyrics` contains all code to produce the different widgets that will be shown on the final website.
 
+## Useful links
+
+- https://com-480-data-visualization.github.io/2020-project-guidelines/
    
-# Interesting basecode
-
-- https://towardsdatascience.com/animated-storytelling-using-the-javascript-d3-library-a1c2264142ad
-- https://github.com/leoniesmits/trump-lyrics
-
 # Team members
 
 | Student's name | SCIPER |
@@ -50,6 +46,3 @@ https://com-480-data-visualization.github.io/2020-project-guidelines/
 |Baudoin Gaëtan Jean Marie von Sury D'Aspremont|260233|
 |Jonathan Besomi|258689 |
 |Julien Salomon |260233 |
-
-
-[Milestone 1](#milestone-1-friday-3rd-april-5pm) • [Milestone 2](#milestone-2-friday-1st-may-5pm) • [Milestone 3](#milestone-3-thursday-28th-may-5pm)

@@ -6,59 +6,37 @@ https://com-480-data-visualization.github.io/2020-project-guidelines/
 
 ## Data
 
-`data` folder contains only the final `dataframe` used for the construction of the website.
-
-_one-line introduction_
+`data` contains all the different dataset.
 
 ## Graph
 
-`graph` folder
-
-_one-line introduction_
-
-[TODO] maybe delete?
+`graph` contains data and code to create different types of graph starting from the lyrical data.
 
 ## Lyrics
 
-`lyrics` folder
+`lyrics` contains the code to scrape the lyrics from Genius.com
 
-_one-line introduction_
-
-- `lyrics.md`
-- `scaper.py` ...
-- `Lyrics EDA` python notebook
 
 ## Milestones
 
-- Mileston 1 link: milestone_1
+- Milestone 1 link: [milestone_1](/milestones/milestone_1.md)
+- Milestone 2 link: [milestone_2](/milestones/milestone_2.md)
+   - 2 pages PDF report: [milestone_2.pdf](/milestones/milestone_2.pdf)
+
 
 ## Processbook
 
-_one-line introduction_
+`processbook`
 
 ## Spotify
 
-_one-line introduction_
-
-`spotify` folder
+`spotify` contains the code to scrape the dataset from Spotify.
 
 
 ## Spotify and Lyrics final dataset
 
-`spotify_lyrics`
+`spotify_lyrics` contains all code to produce the different widgets that will be shown on the final website.
 
-_one-line introduction_ => merge lyrics and spotify
-
-- `Exploratory data analysis`
-- ``
-
-
-# TODO
-
-- Integrate into Lyrics _empath_ library
-- Special songs we need to care of ::
-   - Something and Yesterday by the Beatles
-   - Eminem ft Rihanna song
    
 # Interesting basecode
 

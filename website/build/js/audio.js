@@ -1,6 +1,8 @@
 
 // taken from https://codepen.io/ruchern/pen/OgJqvr
 
+console.log("audio.")
+
 var randomScalingFactor = function() {
   return Math.round(Math.random() * 100);
 };

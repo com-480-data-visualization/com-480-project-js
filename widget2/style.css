@@ -1,0 +1,78 @@
+body { font-family: 'Helvetica Neue', Helvetica; font-weight: 300; padding: 20px;}
+th { text-align: left; }
+th, td { padding: 0 1em 0.5ex 0;}
+th.center, td.center { text-align: center; }
+th.num, td.num { text-align: right; }
+
+.artist{
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.column {
+   float: left;
+   width: 20%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#scatterplot {
+    padding: 0px;
+}
+
+#scatterplot div#area1{
+    display: block;
+}
+
+#scatterplot .axis path,
+#scatterplot .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+#scatterplot text {
+    font-size: 12px;
+    fill: #212121;
+    font-weight: bold;
+}
+
+.axisLabel {
+    fill: #000 !important;
+}
+
+#scatterplot circle {
+    stroke: #991f00;
+    stroke-width: 2px;
+    fill: #E64A19;
+}
+
+#scatterplot .axis text {
+    fill: #000;
+    font-size: 11px;
+}
+
+#scatterplot .title {
+    font-size: 20px;
+}
+
+#scatterplot svg {
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+#scatterplot button {
+    background-color:#f2f2f2;
+    text-align:center;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#scatterplot button:hover {
+    background-color: #b3b3b3;
+}

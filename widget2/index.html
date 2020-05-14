@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="jetpack.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<body>
+
+<div class="row">
+ 	<div class="column column1">
+
+		<p class="artist">Rihanna</p>
+
+	    <div id="scatterplot">
+	        <div id="scatterSvg">
+	    	</div>
+	    </div>
+
+	</div>
+  <div class="column">Beatles</div>
+  <div class="column">Frank Sinatra</div>
+  <div class="column">Eminem</div>
+  <div class="column">Michael Jackson</div>
+</div>
+
+<button>Change Year</button>  
+
+
+</body>
+
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz">
+	<script src="scatterplot.js"></script>
+	<!-- <script src="table.js"></script> -->
+</div>

@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
-var margin = {top: 30, right: 30, bottom: 70, left: 60},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+var margin = {top: 30, right: 30, bottom: 70, left: 80},
+    width = 600 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -12,19 +12,31 @@ var svg = d3.select("#my_dataviz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-// Initialize the X axis
-var x = d3.scaleBand()
-  .range([ 0, width ])
-  .padding(1);
-var xAxis = svg.append("g")
-  .attr("transform", "translate(0," + height + ")")
-
 // Initialize the Y axis
-var y = d3.scaleLinear()
-  .range([ height, 0]);
-var yAxis = svg.append("g")
-  .attr("class", "myYaxis")
 
+var y = d3.scaleBand()
+  .range([ height, 0])
+  .padding(1);
+
+var yAxis = svg.append("g")
+  .attr("stroke-width" , 1)
+  .attr("class" , "axis")
+  //.attr("transform" , "translate(0," + height + ")")
+
+
+
+// Initialize the X axis
+
+var x = d3.scaleLinear()
+  .range([0,width])
+
+
+var xAxis = svg.append("g")
+  .attr("class" , "axis")
+  .attr("stroke-width", 1)
+
+  //.attr("stroke", "#30475e")
+  .attr("transform" , "translate(0," + height + ")")
 
 // A function that create / update the plot for a given variable:
 function update(selectedVar) {
@@ -33,13 +45,13 @@ function update(selectedVar) {
   d3.csv("data.csv", function(data) {
 
     // X axis
-    x.domain(data.map(function(d) { return d.group; }))
-    xAxis.transition().duration(1000).call(d3.axisBottom(x))
-
-    // Add Y axis
-    y.domain([0,  0.9]); // To adapt ylim : d3.max(data, function(d) { return +d[selectedVar] })
+    y.domain(data.map(function(d) { return d.group; }))
     yAxis.transition().duration(1000).call(d3.axisLeft(y));
 
+    // Add Y axis
+    x.domain([0,  0.85]); // To adapt ylim : d3.max(data, function(d) { return +d[selectedVar] })
+    xAxis.transition().duration(1000).call(d3.axisBottom(x));
+    
     // variable u: map data to existing circle
     var j = svg.selectAll(".myLine")
       .data(data)
@@ -51,12 +63,13 @@ function update(selectedVar) {
       .merge(j)
       .transition()
       .duration(1000)
-        .attr("x1", function(d) { console.log(x(d.group)) ; return x(d.group); })
-        .attr("x2", function(d) { return x(d.group); })
-        .attr("y1", y(0))
-        .attr("y2", function(d) { return y(d[selectedVar]); })
-        .attr("stroke-width", 2)
-        .attr("stroke", "grey")
+        .attr("y1", function(d) { console.log(y(d.group)) ; return y(d.group); })
+        .attr("y2", function(d) { return y(d.group); })
+        .attr("x1", x(0))
+        .attr("x2", function(d) { return x(d[selectedVar]); })
+        .attr("stroke-width", 4)
+        .attr("opacity" , 0.16)
+        .attr("stroke", "white")
 
 
     // variable u: map data to existing circle
@@ -69,10 +82,10 @@ function update(selectedVar) {
       .merge(u)
       .transition()
       .duration(1000)
-        .attr("cx", function(d) { return x(d.group); })
-        .attr("cy", function(d) { return y(d[selectedVar]); })
-        .attr("r", 8)
-        .attr("fill", "#69b3a2");
+        .attr("cy", function(d) { return y(d.group); })
+        .attr("cx", function(d) { return x(d[selectedVar]); })
+        .attr("r", 10)
+        .attr("fill", "#FF6363");
 
 
   })
@@ -80,4 +93,4 @@ function update(selectedVar) {
 }
 
 // Initialize plot
-update('Frank Sinatra')
+update('Rihanna')

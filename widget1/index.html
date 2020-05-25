@@ -4,16 +4,20 @@
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
 
+<!-- Load style.css -->
+<link rel="stylesheet" type="text/css" href="style.css">
+
 <!-- Load code.js -->
 
 
 <!-- Add 2 buttons -->
-<button onclick="update('Frank Sinatra')">Frank Sinatra</button>
-<button onclick="update('Eminem')">Eminem</button>
-<button onclick="update('Michael Jackson')">Michael Jackson</button>
-<button onclick="update('Rihanna')">Rihanna</button>
-<button onclick="update('The Beatles')">The Beatles</button>
-
+<div id="buttons">
+	<button onclick="update('Frank Sinatra')" class="bttn-simple">Frank Sinatra</button>
+	<button onclick="update('Eminem')" class="bttn-simple">Eminem</button>
+	<button onclick="update('Michael Jackson')" class="bttn-simple">Michael Jackson</button>
+	<button onclick="update('Rihanna')" class="bttn-simple">Rihanna</button>
+	<button onclick="update('The Beatles')" class="bttn-simple">The Beatles</button>
+</div>
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz">

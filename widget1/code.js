@@ -1,7 +1,12 @@
 // set the dimensions and margins of the graph
-var margin = {top: 30, right: 30, bottom: 70, left: 80},
+var margin = {top: 30, right: 30, bottom: 70, left: 100},
     width = 600 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 420 - margin.top - margin.bottom;
+
+var colors = ["#581845" , "#900c3f", "#c70039" , "#ff5733", "#FF6363", "#ffbd69"];
+var features = ["Danceability", "Energy", "Loudness", "Acousticness", "Valence", "Tempo"];
+
+
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -43,7 +48,6 @@ function update(selectedVar) {
 
   // Parse the Data
   d3.csv("data.csv", function(data) {
-
     // X axis
     y.domain(data.map(function(d) { return d.group; }))
     yAxis.transition().duration(1000).call(d3.axisLeft(y));
@@ -71,7 +75,6 @@ function update(selectedVar) {
         .attr("opacity" , 0.16)
         .attr("stroke", "white")
 
-
     // variable u: map data to existing circle
     var u = svg.selectAll("circle")
       .data(data)
@@ -85,10 +88,12 @@ function update(selectedVar) {
         .attr("cy", function(d) { return y(d.group); })
         .attr("cx", function(d) { return x(d[selectedVar]); })
         .attr("r", 10)
-        .attr("fill", "#FF6363");
+        .attr("fill", function(d){return colors[features.indexOf(d.group)];});
 
 
   })
+
+
 
 }
 

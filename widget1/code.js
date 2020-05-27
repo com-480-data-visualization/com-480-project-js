@@ -55,7 +55,7 @@ function update(selectedVar) {
     // Add Y axis
     x.domain([0,  0.85]); // To adapt ylim : d3.max(data, function(d) { return +d[selectedVar] })
     xAxis.transition().duration(1000).call(d3.axisBottom(x));
-    
+
     // variable u: map data to existing circle
     var j = svg.selectAll(".myLine")
       .data(data)

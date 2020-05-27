@@ -3,12 +3,69 @@ body {
 	font-family : "Arial", serif;
 	font-size : 13px;
 
-	max-width: 600px;
+
     margin: auto;
     margin-top: 100px
 
 }
 
+
+.audio_chart{
+    display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   width:100%;
+   justify-content:space-around;
+}
+
+.widget1_buttons{
+    display: flex;
+   flex-wrap: wrap;
+   flex-direction: row;
+   width:100%;
+   justify-content:space-around;
+}
+
+.check_button{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border-width: 0;
+  border-color: transparent;
+  background: transparent;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+  font-size: 14px;
+  font-family: inherit;
+  padding: 5px 12px;
+  overflow: hidden;
+  border-width: 0;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  -webkit-transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.check_button input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+input:checked {
+
+  color : red;
+
+}
+
+
+.lollipop_chart{
+  
+}
 
 #buttons {
 	margin:auto;
@@ -16,6 +73,8 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+
+
 }
 
 button {

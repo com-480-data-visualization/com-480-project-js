@@ -1,35 +1,50 @@
 # 🔮Hit Artist Analyzer
 
-Hit Artist Analyzer 
+#### Ever wondered what does Frank Sinatra, The Beatles, Michael Jackson, Eminem and Rihanna have in commons?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bVeVMFlwUb8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Getting started
 
 This repository contains already all the necessary file to produce the end-results.
 
-#### Download data
-For downloading lyrics for other artists or Spotify musical data information from other artist, the following two python package are required:
+#### Spotify data download
+For downloading lyrics for other artists or Spotify musical data information from other artist, the `spotipy` python package is required:
 
 ```
 $ pip install spotipy
+```
+
+**Usage**:
+
+```
+$ cd spotify
+$ python scraper.py
+```
+
+#### Lyrics preprocessing
+For pre-processing the lyrical data, the following python package is required:
+
+
+```
 $ pip install lyricsgenius
 ```
 
-#### Pre-processing
-For pre-processing the lyrical data, the following python package is required:
+**Usage**
 
 ```
-$ pip install texthero 
+$ cd lyrics
+$ python scaper.py --artist_name Eminem --max_songs 10
 ```
+
+Will download 10 lyrics from Eminem and store it into `./data/lyrics/Lyrics_Eminem_clean.csv`.
+
 
 ## Repository structure
 
 #### Data
 
-`data`. Contains the final 
-
-#### Graph
-
-`graph` contains data and code to create different types of graph starting from the lyrical data. The 
+`data` Contains both Spotify and lyrics data used throughout the whole analysis. 
 
 #### Lyrics
 
@@ -41,10 +56,19 @@ $ cd lyrics
 $ python scraper.py --artist Eminem --max_songs 100
 ```
 
-#### Website
+#### Milestones
 
-Contains all html/css/Javscript code to produce the [final website](https://hit-artist-analyzer.now.sh/).
+- [Milestone 1](/milestones/milestone_1.md)
+- [Milestone 2](/milestones/milestone_2.md)
+   - 2 pages PDF report: [milestone_2.pdf](/milestones/milestone_2.pdf)
 
+
+#### Notebooks
+
+`notebooks`
+
+Collection of Jupyter Notebooks used during pre-processing and for analysis.
+ 
 
 #### Processbook
 
@@ -53,29 +77,20 @@ Contains all html/css/Javscript code to produce the [final website](https://hit-
 Processbook link: [processbook.pdf](/processbook/processbook.pdf)
 
 
-#### Screencast
-
-The presentation video can be found here in youtube:  [Hit Artist Analyzer](...)
-
-
-#### Milestones
-
-- [Milestone 1](/milestones/milestone_1.md)
-- [Milestone 2](/milestones/milestone_2.md)
-   - 2 pages PDF report: [milestone_2.pdf](/milestones/milestone_2.pdf)
-- 
-
-
-## Spotify
-
-`spotify` contains the code to scrape the dataset from Spotify.
-
-
-## Spotify and Lyrics final dataset
+#### Spotify
 
 `spotify_lyrics` contains all code to produce the different widgets that will be shown on the final website.
 
-   
+
+#### Website
+
+`website` contains all HTML/CSS/Javascript code to produce the [final website](https://hit-artist-analyzer.now.sh).
+
+#### Widgets
+
+The `widgets` contains the three core widgets shown in the final website.
+
+
 # Team members
 
 | Student's name  | SCIPER |

@@ -78,8 +78,8 @@ The presentation video can be found here in youtube:  [Hit Artist Analyzer](...)
    
 # Team members
 
-| Student's name | SCIPER |
-| -------------- | ------ |
-|Baudoin de Sury |260233|
-|Jonathan Besomi|258689 |
-|Julien Salomon |260233 |
+| Student's name  | SCIPER |
+| --------------  | ------ |
+| Baudoin de Sury | 260233 |
+| Jonathan Besomi | 258689 |
+| Julien Salomon  | 260233 |

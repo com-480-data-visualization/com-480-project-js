@@ -49,7 +49,6 @@ function display_conf_interval_mj_sin(file, color){
 }
 
 function display_song_mj_sin(file, color) {
-  console.log("CACA")
 	d3.csv(file,function(data) {
 		    svg_mj_sin
 		      .append("path")

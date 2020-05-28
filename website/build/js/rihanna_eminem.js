@@ -79,4 +79,4 @@ function update_rih_em(selectedVar) {
 
 display_conf_interval_rih_em("/data/Rihanna_mean_std.csv", colors[0])
 display_conf_interval_rih_em("/data/Eminem_mean_std.csv", colors[2])
-
+update_rih_em(songs_rih_em[0])

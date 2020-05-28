@@ -1,6 +1,6 @@
 
-var previous_artist = "Frank Sinatra";
-var artist = "Rihanna";
+var artist_1 = "Frank Sinatra";
+var artist_2 = "The Beatles";
 
 var colors = ["#581845" , "#900c3f", "#c70039" , "#ff5733", "#FF6363", "#ffbd69"];
 
@@ -18,25 +18,17 @@ var svg = d3.select("#my_dataviz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-
-
-
-
-
-function update(artist){
-
+function update(){
   // Parse the Data
   d3.csv("data.csv", function(data) {
-
-
     // Add X axis
+    // Lines
     var x = d3.scaleLinear()
       .domain([0, 0.9])
       .range([ 0, width]);
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x))
-
 
     // Y axis
     var y = d3.scaleBand()
@@ -46,57 +38,60 @@ function update(artist){
     svg.append("g")
       .call(d3.axisLeft(y))
 
-
-    // Lines
-
-    svg.selectAll("myline")
-      .data(data)
-      .enter()
-      .append("line")
-      .attr("class", "line")
-        .attr("x1", function(d) { return x(d[previous_artist]); })
-        .attr("x2", function(d) { return x(d[artist]); })
+    var j = svg.selectAll(".myLine").data(data)
+    j.enter()
+       .append("line")
+       .attr("class", "myLine")
+       .merge(j)
+       .transition()
+       .duration(1000)
+        .attr("x1", function(d) { return x(d[artist_1]); })
+        .attr("x2", function(d) { return x(d[artist_2]); })
         .attr("y1", function(d) { return y(d.group); })
         .attr("y2", function(d) { return y(d.group); })
-          .attr("stroke-width", 4)
-          .attr("opacity" , 0.16)
-          .attr("stroke", "white")
+        .attr("stroke-width", 4)
+        .attr("opacity" , 0.16)
+        .attr("stroke", "white")
 
 
     // Circles of variable 1
-    svg.selectAll("mycircle1")
-      .data(data)
-      .enter()
+    var k = svg.selectAll(".mycircle1").data(data)
+    k.enter()
       .append("circle")
-        .attr("class", "cirlce1")
-        .attr("cx", function(d) { return x(d[previous_artist]); })
-        .attr("cy", function(d) { return y(d.group); })
-        .attr("r", "8")
-        .style("fill", colors[1])
-        .attr("opacity" , 1)
+      .attr("class", "mycircle1")
+      .merge(k)
+      .transition()
+      .duration(1000)
+      .attr("cx", function(d) { return x(d[artist_1]); })
+      .attr("cy", function(d) { return y(d.group); })
+      .attr("r", "8")
+      .style("fill", colors[1])
+      .attr("opacity" , 1)
 
     // Circles of variable 2
-    svg.selectAll("mycircle2").remove();
-    svg.selectAll("mycircle2")
-      .data(data)
-      .enter()
+    var l = svg.selectAll(".mycircle2").data(data)
+    l.enter()
       .append("circle")
-        .attr("class", "circle2")
-        .attr("cx", function(d) { return x(d[artist]); })
+      .attr("class", "mycircle2")
+      .merge(l)
+      .transition()
+      .duration(1000)
+        .attr("cx", function(d) { return x(d[artist_2]); })
         .attr("cy", function(d) { return y(d.group); })
         .attr("r", "8")
         .style("fill", colors[4])
         .attr("opacity" , 1)
-
-
-
-
   });
+}
 
+function update_1(artist){
+  artist_1 = artist
+  update()
+}
+function update_2(artist){
+  artist_2 = artist
+  update()
 }
 
 
-
-update("Eminem")
-
-
+update()

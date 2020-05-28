@@ -11,6 +11,7 @@ body {
    color: white;
     margin: auto;
     line-height: 2em;
+    letter-spacing: 0.1em;
 
 }
 
@@ -21,6 +22,15 @@ footer {
 
 }
 
+a:link {
+  text-decoration: none;
+}
+
+p {
+  letter-spacing: 0.1em;
+  text-align: justify;
+}
+
 
 h1{
    font-size: 3em;
@@ -29,7 +39,15 @@ h3 {
   font-size: 2em;
 }
 
-h1,h2,h3,p{
+h4 {
+  font-size: 1.5em;
+}
+
+h2{
+  font-size: 2.5em;
+}
+
+h1,h2,h3, h4,p{
    opacity: 0.87;
 }
 
@@ -54,6 +72,7 @@ hr{
 .page-content{
    width:60%;
    margin: auto;
+   letter-spacing: 0.1em;
 }
 
 

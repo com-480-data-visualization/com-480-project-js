@@ -48,6 +48,7 @@ function update(artist){
 
 
     // Lines
+
     svg.selectAll("myline")
       .data(data)
       .enter()
@@ -75,6 +76,7 @@ function update(artist){
         .attr("opacity" , 1)
 
     // Circles of variable 2
+    svg.selectAll("mycircle2").remove();
     svg.selectAll("mycircle2")
       .data(data)
       .enter()

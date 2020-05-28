@@ -16,7 +16,6 @@ function loadScatterplot() {
 d3.csv("rihanna.csv", function(data) {
   dataset = data;
 
-
     var column_dim = d3.select(".column").node().getBoundingClientRect();
 
     //Width and height

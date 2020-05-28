@@ -8,7 +8,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       <meta name="viewport" content="width=device-width,initial-scale=1">
 
-      <title>Hit Artist Analyzer - HAA</title>
+      <title>Hit Artist Analyzer</title>
       <meta name="description" content="">
 
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -17,6 +17,7 @@
 
       <!-- Web fonts -->
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Source+Serif+Pro:700" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 
       <!-- favicon.ico. Place these in the root directory. -->
       <link rel="shortcut icon" href="favicon.ico">
@@ -25,17 +26,15 @@
       <link href="css/custom.css" rel="stylesheet">
 
       <!-- Chart JS -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+      
 
       <!-- D3.js -->
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+	  <script src="https://d3js.org/d3.v4.js"></script>
 
-      <script type="module" src="js/audio.js"></script>
-      <script type="module" src="js/lyrics.js"></script>
 
       <script type="text/javascript" src="js/learning.js"></script> <!-- ATTENTION difference between "module" and "text/javascript" -->
       
-      <script type="text/javascript" src="js/RadarChart.js"></script>
+
 
 
    </head>
@@ -50,8 +49,9 @@
       <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
           <div class="mdl-layout__header-row">
+            <i class="material-icons md-light">equalizer</i>
             <!-- Title -->
-            <span class="mdl-layout-title">Hit Artist Analyzer - HAA</span>
+            <span class="mdl-layout-title">Hit Artist Analyzer</span>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
@@ -59,107 +59,242 @@
               <a class="mdl-navigation__link" href="#intro">Intro</a>
               <a class="mdl-navigation__link" href="#audio">Audio</a>
               <a class="mdl-navigation__link" href="#lyrics">Lyrics</a>
+              <a class="mdl-navigation__link" href="#further">To go further</a>
               <a class="mdl-navigation__link" href="#methods">Methods</a>
             </nav>
           </div>
         </header>
 
         <main class="mdl-layout__content wrapper">
+
+
+               
+
+
+               <!-- Banner -->
+
+               <div id="banner">
+                  <div class="img-with-text">
+                     <div class="container">
+                        <img src="img/banner/sinatra.png" class="box" width="200" height="200">
+                     </div>
+
+                     <div class="scroll-spotify">
+                        <button type="button" class="collapsible">Frank Sinatra</button>
+                        <div class="content">
+                           <iframe src="https://open.spotify.com/embed/artist/1Mxqyy3pSjf8kZZL4QVxS0" width="220" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                     </div>
+                  </div>
+                     <div class="img-with-text">
+                     <div class="container">
+                        <img src="img/banner/beatles.png" class="box" width="200" height="200">
+
+                     </div>
+                     <div class="scroll-spotify">
+                        <button type="button" class="collapsible">The Beatles</button>
+                        <div class="content">
+                           <iframe src="https://open.spotify.com/embed/artist/3WrFJ7ztbogyGnTHbHJFl2" width="220" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                     </div>
+                  </div>
+                     <div class="img-with-text">
+                     <div class="container">
+                        <img src="img/banner/mj.png" class="box" width="200" height="200">
+                     </div>
+                     <div class="scroll-spotify">
+                        <button type="button" class="collapsible">Michael Jackson</button>
+                        <div class="content">
+                           <iframe src="https://open.spotify.com/embed/artist/3fMbdgg4jU18AjLCKBhRSm" width="220" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                     </div>
+                  </div>
+                     <div class="img-with-text">
+                     <div class="container">
+                        <img src="img/banner/eminem.png" class="box" width="200" height="200">
+
+                     </div>
+                     <div class="scroll-spotify">
+                        <button type="button" class="collapsible">Eminem</button>
+                        <div class="content"> 
+                           <iframe src="https://open.spotify.com/embed/artist/7dGJo4pcD2V6oG8kP0tJRR" width="220" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                     </div>
+                  </div>
+                     <div class="img-with-text">
+                     <div class="container">
+                        <img src="img/banner/rihanna.png" class="box" width="200" height="200">
+
+                     </div><div class="scroll-spotify">
+                        <button type="button" class="collapsible">Rihanna</button>
+                        <div class="content">
+                           <iframe src="https://open.spotify.com/embed/artist/5pKCCKE2ajJHZ9KAiaK11H" width="220" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <script src="js/banner.js"></script>
+
+
+
+
+
+
+
+
+
+
             <div class="page-content">
 
-
-               <!-- CARDS -->
-               <div class="mdl-grid">
-
-                  <!-- For grid. Empty card -->
-                  <div class="mdl-cell mdl-cell--1-col"></div>
-
-                  <!-- Eminem Card -->
-                  <div class="mdl-cell mdl-cell--2-col">
-                     <div class="mdl-card mdl-shadow--2dp album">
-                        <div class="mdl-card__media">
-                           <img src="img/artist/eminem.jpg" border="0" alt="" width="200" height="200" style="padding:10px;">
-                        </div>
-                     </div>
-                  </div>
-
-
-                  <!-- Rihanna Card -->
-                  <div class="mdl-cell mdl-cell--2-col">
-                     <div class="mdl-card mdl-shadow--2dp album">
-                        <div class="mdl-card__media">
-                           <img src="img/artist/rihanna.jpeg" border="0" alt="" width="200" height="200" style="padding:10px;">
-                        </div>
-                     </div>
-                  </div>
-
-                  <!-- Frank Sinatra Card -->
-                  <div class="mdl-cell mdl-cell--2-col">
-                     <div class="mdl-card mdl-shadow--2dp album">
-                        <div class="mdl-card__media">
-                           <img src="img/artist/frank_sinatra.jpg" width="200" height="200" border="0" alt="" style="padding:10px;">
-                        </div>
-                     </div>
-                  </div>
-
-                  <!-- The Beatles Card -->
-                  <div class="mdl-cell mdl-cell--2-col">
-                     <div class="mdl-card mdl-shadow--2dp album">
-                        <div class="mdl-card__media">
-                           <img src="img/artist/beatles.jpg" width="200" height="200" border="0" alt="" style="padding:10px;">
-                        </div>
-                     </div>
-                  </div>
-
-                  <!-- MJ Card -->
-                  <div class="mdl-cell mdl-cell--2-col">
-                     <div class="mdl-card mdl-shadow--2dp album">
-                        <div class="mdl-card__media">
-                           <img src="img/artist/mj.jpg" width="200" height="200" border="0" alt="" style="padding:10px;">
-                        </div>
-                     </div>
-                  </div>
-
-                  <!-- For grid. Empty card -->
-                  <div class="mdl-cell mdl-cell--1-col"></div>
-
-               </div>
-
-               <!-- TITLE -->
+               <!-- Title -->
                <div class="title">
                   <h1>Hall of Fame</h1>
-
-                  <h2>Audio and Lyrics Vizualization</h2>
+                  <h2>Five Iconic Artists of their Time Compared</h2>
+                  <hr>
                </div>
 
-               <!-- INTRO -->
+               <!-- Intro -->
                <div id="intro">
-                  <h2>Audio Analysis</h2>
-                  <canvas id="audio"></canvas>
+                  <p>Music is an art that has always existed. Music creates passion and fame. Since the fiftys, music evolved so fast and many different music style have emerged (rock & roll, pop, rap, hip-hop etc...). Here we present a story anlyzing the most iconic artists of their generation since 1950 with completely different music styles : Frank Sinatra and his jazzy tones, The Beatles and their (soft) rock & roll hits, Michael Jackson the king of Pop, Eminem the rap god and Rihanna the Hip-Hop queen.</p>
+                  <p>
+                  This story go through each artist and compare them with respect to their musicality based on audio features extracted from Spotify and their Lyrics.
+                  Datavizualization have been created to allow the reader to explore the different artist musical univers and to discover their similarities and differencies.</p>
                </div>
 
-               <!-- AUDIO ANALYSIS -->
+
+               <!-- Audio Analysis -->
                <div id="audio">
-                  <h2>Audio Analysis</h2>
-                  <div class="radarChart"></div>
+                  <h1>Audio Analysis</h1>
+                  <h4>A Data-Driven Audio Tour of the Artists</h4>
+                  <hr>
+                  <p>To identify and compare the audio signature of the different artists, we propose to use the following normalized features provided by <a class="link" href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify</a> : Tempo, Valence, Acousticness, Loudness, Energy and Danceability. The following vizualization allows you to play with the different artists and explore their audio signature.</p>
+               
+
+                  <!-- Add buttons -->
+                  <div class="lollipop_chart">
+                     <div id="buttons">
+                        <button onclick="update('Frank Sinatra')" class="bttn-simple">Frank Sinatra</button>
+                        <button onclick="update('Eminem')" class="bttn-simple">Eminem</button>
+                        <button onclick="update('Michael Jackson')" class="bttn-simple">Michael Jackson</button>
+                        <button onclick="update('Rihanna')" class="bttn-simple">Rihanna</button>
+                        <button onclick="update('The Beatles')" class="bttn-simple">The Beatles</button>
+                     </div> 
+
+                     <!-- Include D3.js chart -->
+                     <div id="lollipop_d3">
+                        <script src="js/lollipop.js"></script>
+                     </div>
+                  
+                  </div>
+
+
+
+
+                  <div class="comment">
+                     <div class="comment-title">
+                        Expected Audio Signatures ?
+                     </div>
+                     <div class="comment-content">
+                        <p>The audio signature of the different artist is overall expected as the high acoustiness for Frank Sinatra but low for the four other artists, the high energy and loudness of Eminem...</p>
+                     </div>
+                  </div>
+
                </div>
 
-               <!-- LYRICS ANALYSIS -->
+               <!-- Lyrics Analysis -->
                <div id="lyrics">
-                  <h2>Lyrics Analysis</h2>
-                  <canvas id="lyrics"></canvas>
+                  <h1>Lyrics Analysis</h1>
+                  <hr>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                </div>
 
-               <!-- METHODS -->
-               <div id="methods">
-                  <h2>Methods</h2>
+
+
+
+               <!-- To go further -->
+               <div id="further">
+                  <h1>To go further</h1>
+                  <hr>
+
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                  <div id="mj_sin">
+                     <h3>Michael Jackson & Frank Sinatra</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+                     <div id="mj_sin_dataviz">
+                        <script src="js/mj_sin.js"></script>
+                     </div>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                  </div>
+
+                  <div id="rih_em">
+                     <h3>Rihanna & Eminem</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                     <div id="buttons">
+                        <button onclick="update_rih_em('Love The Way You Lie')" class="bttn-simple">Love The Way You Lie</button>
+                        <button onclick="update_rih_em('Love The Way You Lie (Part II) - Pt. 2')" class="bttn-simple">Love The Way You Lie (Part II)</button>
+                        <button onclick="update_rih_em('The Monster')" class="bttn-simple">The Monster</button>
+                        <button onclick="update_rih_em('Numb')" class="bttn-simple">Numb</button>
+                     </div>
+                     <div id="rih_em_dataviz">
+                        <script src="js/rihanna_eminem.js"></script>
+                     </div>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+
+
+                  </div>
+
+
+
+                     <div id="sin_beat">
+                        <h3>Frank Sinatra & The Beatles</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        <div id="buttons">
+                           <button onclick="update_sin_beat('Yesterday')" class="bttn-simple">Yesterday</button>
+                           <button onclick="update_sin_beat('Something')" class="bttn-simple">Something</button>
+                        </div>
+
+                        <div id="sin_beat_dataviz">
+                           <script src="js/sinatra_beatles.js"></script>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+                        <div class="comment">
+                           <div class="comment-title">
+                              What to conclude ?
+                           </div>
+                           <div class="comment-content">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                           </div>
+                        </div>
+                     </div>
                </div>
+
+               <!-- Method -->
+               <div id="methods">
+                  <h1>Methods</h1>
+                  <hr>
+               </div>
+
+               
+
+
 
             </div>
+            <footer>
+               
+            </footer>
         </main>
       </div>
     </body>
 
-<script type="text/javascript" src="js/radar.js"></script>
+    
+
+
+
+
+
 
 </html>

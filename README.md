@@ -1,8 +1,8 @@
-# 🔮Hit Artist Analyzer
+# Hit Artist Analyzer
 
 #### Ever wondered what does Frank Sinatra, The Beatles, Michael Jackson, Eminem and Rihanna have in commons?
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bVeVMFlwUb8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Screencast video](https://img.youtube.com/vi/bVeVMFlwUb8/0.jpg)](https://www.youtube.com/watch?v=bVeVMFlwUb8)
 
 ## Getting started
 

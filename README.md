@@ -2,7 +2,10 @@
 
 #### Ever wondered what does Frank Sinatra, The Beatles, Michael Jackson, Eminem and Rihanna have in commons?
 
-[![Screencast video](https://img.youtube.com/vi/bVeVMFlwUb8/0.jpg)](https://www.youtube.com/watch?v=bVeVMFlwUb8)
+<p align="center">
+    <img src="./website/github_header.png">
+</p>
+
 
 ## Getting started
 

@@ -14,11 +14,22 @@ body {
 
 }
 
+footer {
+  height: 300px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.04);
+
+}
+
+
 h1{
    font-size: 3em;
 }
+h3 {
+  font-size: 2em;
+}
 
-h1,h2,p{
+h1,h2,h3,p{
    opacity: 0.87;
 }
 
@@ -249,7 +260,7 @@ button {
    opacity: 0.4;
 }
 
-#lollipop_d3 {
+#lollipop_d3{
    border-radius: 5px;
    margin: auto;
    max-width: 700px;
@@ -275,6 +286,11 @@ button {
 
    background-color: rgba(255,255,255,0.12);
    padding: 10px 10px 10px 10px;
+}
+
+#mj_sin, #sin_beat, #rih_em {
+
+  margin: auto;
 }
 
 

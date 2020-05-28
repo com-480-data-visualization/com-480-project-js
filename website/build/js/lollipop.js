@@ -4,7 +4,7 @@ var margin = {top: 30, right: 30, bottom: 70, left: 100},
     height = 420 - margin.top - margin.bottom;
 
 var colors = ["#581845" , "#900c3f", "#c70039" , "#ff5733", "#FF6363", "#ffbd69"];
-var features = ["Danceability", "Energy", "Loudness", "Acousticness", "Valence", "Tempo"];
+var features1 = ["Danceability", "Energy", "Loudness", "Acousticness", "Valence", "Tempo"];
 
 
 
@@ -88,7 +88,7 @@ function update(selectedVar) {
         .attr("cy", function(d) { return y(d.group); })
         .attr("cx", function(d) { return x(d[selectedVar]); })
         .attr("r", 10)
-        .attr("fill", function(d){return colors[features.indexOf(d.group)];});
+        .attr("fill", function(d){return colors[features1.indexOf(d.group)];});
 
 
   })

@@ -9,7 +9,7 @@ var features = ["Danceability", "Energy", "Loudness", "Acousticness", "Valence",
 
 
 // append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
+var svg = d3.select("#my_dataviz1")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -46,6 +46,8 @@ var xAxis = svg.append("g")
 // A function that create / update the plot for a given variable:
 function update(selectedVar) {
 
+
+
   // Parse the Data
   d3.csv("data.csv", function(data) {
     // X axis
@@ -55,7 +57,7 @@ function update(selectedVar) {
     // Add Y axis
     x.domain([0,  0.85]); // To adapt ylim : d3.max(data, function(d) { return +d[selectedVar] })
     xAxis.transition().duration(1000).call(d3.axisBottom(x));
-
+    
     // variable u: map data to existing circle
     var j = svg.selectAll(".myLine")
       .data(data)

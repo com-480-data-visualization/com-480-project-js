@@ -139,12 +139,12 @@
 
                 <!-- Intro -->
                 <div id="intro">
-                    <p>Music is an art that has always existed. Music creates passion and fame. Since the fiftys, music evolved so fast and many different music style have emerged (rock & roll, pop, rap, hip-hop etc...). Here we present a story
-                        anlyzing the most iconic artists of their generation since 1950 with completely different music styles: Frank Sinatra and his jazzy tones, The Beatles and their (soft) rock & roll hits, Michael Jackson the king of Pop,
+                    <p>Music is an art that has always existed. Music creates passion and fame. Since the fifties, music has evolved very fast and many different music styles have emerged (rock & roll, pop, rap, hip-hop etc...). Here we present a story
+                        anlyzing the most iconic artists of their generation since 1950 with completely different music styles : Frank Sinatra and his jazzy tones, The Beatles and their (soft) rock & roll hits, Michael Jackson the king of Pop,
                         Eminem the rap god and Rihanna the Hip-Hop queen.</p>
                     <p>
-                        This story go through each artist and compare them with respect to their musicality based on audio features extracted from Spotify and their lyrics extracted from Genius.
-                        Datavizualization have been created to allow the reader to explore the different artist musical universes and to discover their similarities and differences.</p>
+                        This story goes through each artist and compares them with respect to their musicality based on audio features extracted from Spotify and their lyrics extracted from Genius.
+                        Data vizualization has been created to allow the reader to explore the different artist musical universes and to discover their similarities and differences.</p>
                 </div>
 
 
@@ -154,7 +154,7 @@
                     <h4>A Data-Driven Audio Tour of the Artists</h4>
                     <hr>
                     <p>To identify and compare the audio signature of the different artists, we propose to use the following features provided by <a class="link" href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify</a> that were then normalized:
-                        Tempo, Valence, Acousticness, Loudness, Energy and Danceability. The following vizualization allows you to compare different artists and explore their audio signature.</p>
+                        Tempo, Valence, Acousticness, Loudness, Energy and Danceability. The following vizualization allows you to compare different artists and explore their audio signature. Play with the buttons at the top and the bottom of the plot to compare two artists.</p>
 
 
                     <!-- Add buttons -->
@@ -207,7 +207,7 @@
                     <hr>
                     <p>
 
-                        Let’s now explore the lyrics of the different artists, what are the most used words by the different artists? Are they the same? Is Eminem positive or negative in his songs? What about the others? What words describe a
+                        Let’s now explore the lyrics of the different artists : what are the most used words by the different artists? Are they the same? Is Eminem positive or negative in his songs? What about the others? What words describe a
                         positive or a negative songs for each artist? </br>
 
                         Move the brush from top to bottom and resize it to select more or less positive songs for each artist and see what are the most used words per artist for the selected songs.
@@ -307,12 +307,12 @@
 
                 <div class="comment">
                     <div class="comment-title">
-                        Key-takeaways
+                        Key Takeaways
                     </div>
                     <div class="comment-content">
-                        <p>First, when selecting all the songs for all the artists, it appears that the word love is the most used word for all artists (except Eminem where it is like). It is comforting to know that there is so much love in this
+                        <p>First, when selecting all the songs for all the artists, it appears that the word "love" is the most used word for all artists (except Eminem where it is "like"). It is comforting to know that there is so much love in this
                             world.</p>
-                          <p>  Secondly, baby is in the top words of all artists except Frank Sinatra (and Eminem again…). We can deduce here that vocabulary has changed since Frank Sinatra period but also that Eminem is lonely.</p>
+                          <p>  Secondly, baby is in the top words of all artists except Frank Sinatra (and Eminem again…). We can deduce here that vocabulary has changed since Frank Sinatra's period but also that Eminem is lonely.</p>
                     </div>
                 </div>
 
@@ -331,20 +331,20 @@
 
                 <!-- To go further -->
                 <div id="comparison">
-                    <h1>Artists comparison</h1>
+                    <h1>Artists Comparison</h1>
                     <hr>
 
-                    <p>Let’s try now to go more in-depth and explore the link of some of these five artists on specific songs. Indeed many of them had sang the same song, sang together or have been produced by the same producer.
-                        On the following visualisation, the zones represent the artist audio signature and the lines represent a specific song common to both artists. Play with buttons to see the different songs common to both artists.</p>
+                    <p>Let’s try now to go more in-depth and explore the link between some of these five artists on specific songs. Indeed, many of them have sang the same song, sang together or have been produced by the same producer.
+                        On the following vizualisation, the zones represent the artist audio signature and the lines represent a specific song common to both artists. The zones have been generated as follows : the median of each feature of the artist's discography for the center and the standard deviation for the width. Play with buttons to see the different songs common to two artists.</p>
 
                     <div id="mj_sin">
                         <h3>Michael Jackson & Frank Sinatra</h3>
                         <p>Michael Jackson & Frank Sinatra both have been produced by the legendary Quincy Jones.
-                           For Michael Jackson, his greateast albums such as Off The Wall, Thriller or Bad were procuded by Quincy Jones,
+                           For Michael Jackson, his greateast albums such as Off The Wall, Thriller or Bad were produced by Quincy Jones,
                             and for Sinatra, he has collaborated multiple times with Quincy Jones, but he was produced only once for his album L.A is my Lady.
                           </p>
                           <p>
-                            Below you can observe the following line graph. In purple is drawn the area representing Michael Jackson's most representative audio feature values, and in red, Sinatra's. You can now see in yellow the mean value for Michael Jacksons'
+                            Below, you can observe the following line graph. In purple is drawn the area representing Michael Jackson's most representative audio feature values, and in red, Sinatra's. You can now see in yellow the mean value for Michael Jackson's
                             albums produced by Quincy Jones, and the mean value for Sinatra's Quincy Jones produced tracks.
                           </p>
                     </div>
@@ -377,7 +377,7 @@
 
                     <div id="rih_em">
                         <h3>Rihanna & Eminem</h3>
-                        <p>Rihanna and Eminem sang four different songs together in different albums. Some songs below to Rihanna albums, some to Eminem’s. Play with the buttons to see how do these songs fit in the audio signature of Eminem or Rihanna.</p>
+                        <p>Rihanna and Eminem sang four different songs together in different albums. Some songs belong to Rihanna albums, some to Eminem’s. Play with the buttons to see how these songs fit in the audio signature of Eminem or Rihanna.</p>
                         <div id="buttons">
                             <button onclick="update_rih_em('Love The Way You Lie')" class="bttn-simple">Love The Way You Lie</button>
                             <button onclick="update_rih_em('Love The Way You Lie (Part II) - Pt. 2')" class="bttn-simple">Love The Way You Lie (Part II)</button>
@@ -387,9 +387,9 @@
                         <div id="rih_em_dataviz">
                             <script src="js/rihanna_eminem.js"></script>
                         </div>
-                        <p>Love the Way you lie (original) fits more the Eminem signature but Love the Way you lie (Part II) fits more Rihanna Signature. </p>
+                        <p>Love the Way you lie (original) fits more with the Eminem signature but Love the Way you lie (Part II) fits more with Rihanna's Signature. </p>
                         <p>Numb is a perfect balance between the two styles (that are already pretty similar).</p>
-                        <p>The Monster fits more Eminem but is balanced.</p>
+                        <p>The Monster fits more with Eminem but is balanced.</p>
 
                     </div>
 
@@ -397,7 +397,7 @@
 
                     <div id="sin_beat">
                         <h3>Frank Sinatra & The Beatles</h3>
-                        <p>Frank Sinatra reprised two of The Beatles' classics: Yesterday and Something. How do each interpretation relate to both artists? </p>
+                        <p>Frank Sinatra reprised two of The Beatles' classics: Yesterday and Something. How does each interpretation relate to both artists? </p>
                         <div id="buttons">
                             <button onclick="update_sin_beat('Yesterday')" class="bttn-simple">Yesterday</button>
                             <button onclick="update_sin_beat('Something')" class="bttn-simple">Something</button>
@@ -416,9 +416,9 @@
                                 What to conclude ?
                             </div>
                             <div class="comment-content">
-                                <p> These visualisations are an efficient way to compare artists and songs for these artists.
+                                <p> These vizualisations are an efficient way to compare artists and songs for these artists.
                                   What artists are you interested in comparing? What did we miss? If you are interested in this, you can visit our<a href="https://github.com/com-480-data-visualization/com-480-project-js"> Github Repository</a>, and use our tools
-                                  to create your own visualisations.
+                                  to create your own vizualisations.
                                  </p>
                             </div>
                         </div>

@@ -6,6 +6,12 @@
     <img src="./website/github_header.png">
 </p>
 
+# Screencast
+
+_The best solution if you got only two free minutes and no more_
+
+[![Screencast url](./website/screencast.png)](https://www.youtube.com/watch?v=E69zIqW47ao)
+
 
 ## Getting started
 

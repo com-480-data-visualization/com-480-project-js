@@ -14,13 +14,14 @@ _The best solution if you got only two free minutes and no more_
 </p>
 
 <p align="center">
-    <a href="https://www.youtube.com/watch?v=E69zIqW47ao">Hit Artist Analyzer</a>
+    <a href="https://www.youtube.com/watch?v=E69zIqW47ao">Hit Artist Analyzer screencast</a>
 </a>
 
 
 ## Getting started
 
-Welcome. This repository contains the code to produce the following website: <a href="https:/hit-artist-analyzer.now.sh">hit-artist-analyzer.now.sh</a>.
+Welcome. This repository contains the code for the project "Hit Artist Analyzer" made by Baudoin de Sury, Jonathan Besomi and Julien Salomon for the EPFL course <a href="https://edu.epfl.ch/coursebook/en/data-visualization-COM-480">Data visualization - COM-480</a>. Happy reading.
+
 
 #### Execute website locally
 
@@ -110,8 +111,6 @@ Processbook link: [processbook.pdf](/processbook/processbook.pdf)
 `website` contains all code to produce the [final website](https://hit-artist-analyzer.now.sh).
 
 All code live under `build` and the HTML/CSS and Javascript files are separated in their respective folders.
-
-The website is built from a single _html file_, index.html.
 
 All code has been formatted with <a href="https://atom.io/packages/prettier-atom">prettifier-atom</a> for easy readability.
 

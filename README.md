@@ -2,29 +2,49 @@
 
 #### Ever wondered what does Frank Sinatra, The Beatles, Michael Jackson, Eminem and Rihanna have in commons?
 
-<p align="center">
-    <img src="./website/github_header.png">
-</p>
 
-# Screencast
+### Presentation video:
 
 _The best solution if you got only two free minutes and no more_
 
-[![Screencast url](./website/screencast.png)](https://www.youtube.com/watch?v=E69zIqW47ao)
+<p align="center">
+    <a href="https://www.youtube.com/watch?v=E69zIqW47ao">
+        <img src="./website/github_header.png">
+    </a>
+</p>
+
+<p align="center">
+    <a href="https://www.youtube.com/watch?v=E69zIqW47ao">Hit Artist Analyzer</a>
+</a>
 
 
 ## Getting started
 
-This repository contains already all the necessary file to produce the end-results.
+Welcome. This repository contains the code to produce the following website: <a href="https:/hit-artist-analyzer.now.sh">hit-artist-analyzer.now.sh</a>.
+
+#### Execute website locally
+
+The `website` folder contains all code to produce the end-result. To lunch it locally:
+
+```
+$ cd website/build
+$ python3 -m http.server
+```
+
+In case you have <a href="https://www.browsersync.io/">`browser-sync`</a> installed you can type `./serve.sh` for live update on code changes. 
+
 
 #### Spotify data download
-For downloading lyrics for other artists or Spotify musical data information from other artist, the `spotipy` python package is required:
+To download the Spotify musical data from new artist, `spotipy` python package is required:
 
 ```
 $ pip install spotipy
 ```
 
-**Usage**:
+**Download new Spotify artist**:
+
+1. Open `scraper.py` and insert the new artist into the ARTISTS array. 
+2. Type the following command
 
 ```
 $ cd spotify
@@ -34,19 +54,18 @@ $ python scraper.py
 #### Lyrics preprocessing
 For pre-processing the lyrical data, the following python package is required:
 
-
 ```
 $ pip install lyricsgenius
 ```
 
-**Usage**
+**Download new lyrics**:
 
 ```
 $ cd lyrics
 $ python scaper.py --artist_name Eminem --max_songs 10
 ```
 
-Will download 10 lyrics from Eminem and store it into `./data/lyrics/Lyrics_Eminem_clean.csv`.
+> Will download 10 lyrics from Eminem and store it under `./data/lyrics/Lyrics_Eminem_clean.csv`.
 
 
 ## Repository structure
@@ -59,24 +78,19 @@ Will download 10 lyrics from Eminem and store it into `./data/lyrics/Lyrics_Emin
 
 `lyrics` contains the code to scrape the lyrics from Genius.com.
 
-Usage example:
-```
-$ cd lyrics
-$ python scraper.py --artist Eminem --max_songs 100
-```
-
 #### Milestones
+
+Two previous milestone markdown and files.
 
 - [Milestone 1](/milestones/milestone_1.md)
 - [Milestone 2](/milestones/milestone_2.md)
    - 2 pages PDF report: [milestone_2.pdf](/milestones/milestone_2.pdf)
 
-
 #### Notebooks
 
 `notebooks`
 
-Collection of Jupyter Notebooks used during pre-processing and for analysis.
+Collection of Jupyter Notebooks used during pre-processing and for different analysis.
  
 
 #### Processbook
@@ -88,12 +102,19 @@ Processbook link: [processbook.pdf](/processbook/processbook.pdf)
 
 #### Spotify
 
-`spotify_lyrics` contains all code to produce the different widgets that will be shown on the final website.
+`spotify` contains the code to download data from Spotify as well as some already well-formatted exploratory data analysis notebooks.
 
 
 #### Website
 
-`website` contains all HTML/CSS/Javascript code to produce the [final website](https://hit-artist-analyzer.now.sh).
+`website` contains all code to produce the [final website](https://hit-artist-analyzer.now.sh).
+
+All code live under `build` and the HTML/CSS and Javascript files are separated in their respective folders.
+
+The website is built from a single _html file_, index.html.
+
+All code has been formatted with <a href="https://atom.io/packages/prettier-atom">prettifier-atom</a> for easy readability.
+
 
 #### Widgets
 
